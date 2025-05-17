@@ -1,0 +1,42 @@
+__  __  __
+\ \ \ \ \/
+ \ \/\ \
+  \/  \/
+
+The humans.txt file explains the team, technology,
+and graphic assets behind this site humanstxt.org.
+
+_______________________________________________________________________________
+
+DESIGNER | مصمم
+
+Othman Al Bakri
+Full Stack Developer & Software Engineer
+
+Design tools:
+Figma
+VSCode
+GitHub
+
+instagram.com/othmanbakri_
+github.com/othman822
+linkedin.com/in/othman-al-bakri-a829932ab
+
+_______________________________________________________________________________
+
+TECHNOLOGY | تقنية
+
+React
+Remix
+Three.js
+Framer Motion
+
+_______________________________________________________________________________
+
+FONTS | خطوط
+
+Gotham
+IPA Gothic Regular
+Hiragino Kaku Gothic W8
+
+
