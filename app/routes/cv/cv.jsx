@@ -4,14 +4,20 @@ import { Text } from '~/components/text';
 import { Button } from '~/components/button';
 import { Link } from '~/components/link';
 import { useInViewport } from '~/hooks';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import styles from './cv.module.css';
 
 export function CV() {
   const [focused, setFocused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const cvRef = useRef();
   const isInViewport = useInViewport(cvRef, false, { threshold: 0.4 });
-  const sectionVisible = isInViewport || focused;
+
+  useEffect(() => {
+    setIsMobile(/Mobi|Android/i.test(window.navigator.userAgent));
+  }, []);
+
+  const sectionVisible = isInViewport || focused || isMobile;
   
   const handleFocus = () => {
     setFocused(true);
