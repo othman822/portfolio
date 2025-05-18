@@ -164,7 +164,6 @@
     opacity: 0;
     max-width: 100%;
     white-space: nowrap;
-    overflow: hidden;
     flex: 0 0 auto;
 
     @media (--mediaMobile) {

@@ -14,13 +14,81 @@ import flatlineSkull from './error-flatline.svg';
 export function Error({ error }) {
   const flatlined = !error.status;
 
+  // Special case for OSAT project future work
+  if (typeof window !== 'undefined' && window.location.pathname === '/projects/osat') {
+    return (
+      <section className={styles.page}>
+        <Transition in>
+          {({ visible }) => (
+            <>
+              <div className={styles.details}>
+                <div className={styles.text}>
+                  <Heading
+                    className={styles.title}
+                    data-visible={visible}
+                    level={1}
+                    weight="bold"
+                  >
+                    Future Work
+                  </Heading>
+                  <Heading
+                    aria-hidden
+                    className={styles.subheading}
+                    data-visible={visible}
+                    as="h2"
+                    level={4}
+                  >
+                    <DecoderText text="Project details coming soon" start={visible} delay={300} />
+                  </Heading>
+                  <Text className={styles.description} data-visible={visible} as="p">
+                    The project details will be added soon. Please check back later!
+                  </Text>
+                  <Button
+                    secondary
+                    iconHoverShift
+                    className={styles.button}
+                    data-visible={visible}
+                    href="/"
+                    icon="chevron-right"
+                  >
+                    Back to homepage
+                  </Button>
+                </div>
+              </div>
+              <div className={styles.videoContainer} data-visible={visible}>
+                <Image
+                  reveal
+                  cover
+                  noPauseButton
+                  delay={600}
+                  className={styles.video}
+                  src={notFoundVideo}
+                  placeholder={notFoundPoster}
+                />
+                <a
+                  className={styles.credit}
+                  data-visible={visible}
+                  href="https://www.imdb.com/title/tt0113568/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Animation from Ghost in the Shell (1995)
+                </a>
+              </div>
+            </>
+          )}
+        </Transition>
+      </section>
+    );
+  }
+
   const getMessage = () => {
     switch (error.status) {
       case 404:
         return {
           summary: 'Error: redacted',
           message:
-            'This page could not be found. It either doesn’t exist or was deleted. Or perhaps you don’t exist and this webpage couldn’t find you.',
+            "This page could not be found. It either doesn't exist or was deleted. Or perhaps you don't exist and this webpage couldn't find you.",
         };
       case 405:
         return {
